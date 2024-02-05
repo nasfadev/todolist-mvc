@@ -1,2 +1,2 @@
 <?php
-require_once('src/init.php');
+require_once('../app/init.php');
