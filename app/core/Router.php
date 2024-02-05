@@ -1,12 +1,16 @@
 <?php
 
-namespace todolist\core;
+namespace todolist;
+
 
 class Router
 {
     function __construct(array $url)
     {
-        echo "halo";
+        require('../app/controllers/login.php');
+
+        $login = new Login();
+        $login->init();
     }
     function urlParser()
     {

@@ -1,6 +1,6 @@
 <?php
 
-use todolist\core\Router;
+use todolist\Router;
 
 require_once("core/Router.php");
 
