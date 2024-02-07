@@ -5,13 +5,23 @@ namespace todolist;
 
 class Router
 {
+    private $controller = 'Login';
+    private $model = 'login';
     function __construct(array $url)
     {
-        require('../app/controllers/Login.php');
-        $login = new Login();
-        $login->init();
+
+        $login = $this->get_contr('Login');
+        $login->tryLogin();
+        if (!isset($_SESSION['user_data']['user'])) {
+            $login->init();
+            return;
+        }
+        $home = $this->get_contr('Home');
+        $home->init();
     }
-    function urlParser()
+    function get_contr(string $controller)
     {
+        require('../app/controllers/' . $controller . '.php');
+        return new (__NAMESPACE__ . '\\' . $controller);
     }
 }

@@ -8,11 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
-<body class="h-100 bg-body-tertiary">
+<body class="h-100">
     <div class=" d-flex flex-column justify-content-center align-items-center h-100">
         <h1 class="mb-5 text-center">Login to <span class="text-info">ToDoList</span></h1>
 
-        <form action="" method="post" class="shadow p-4 rounded bg-white border text-secondary">
+        <form method="post" class=" p-4 rounded bg-white border text-secondary">
 
             <div class="form-floating mb-3">
                 <input name="username" type="username" class="form-control" id="floatingInput" placeholder="name@example.com">
