@@ -7,8 +7,7 @@ class Router
 {
     function __construct(array $url)
     {
-        require('../app/controllers/login.php');
-
+        require('../app/controllers/Login.php');
         $login = new Login();
         $login->init();
     }
