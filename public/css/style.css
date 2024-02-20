@@ -940,6 +940,10 @@ video {
   text-underline-offset: 4px;
 }
 
+.opacity-0 {
+  opacity: 0;
+}
+
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -1036,6 +1040,11 @@ video {
   color: rgb(29 78 216 / var(--tw-text-opacity));
 }
 
+.hover\:text-pink-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(219 39 119 / var(--tw-text-opacity));
+}
+
 .hover\:text-slate-500:hover {
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
@@ -1048,11 +1057,6 @@ video {
 .hover\:brightness-90:hover {
   --tw-brightness: brightness(.9);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.\*\:hover\:text-blue-700:hover > * {
-  --tw-text-opacity: 1;
-  color: rgb(29 78 216 / var(--tw-text-opacity));
 }
 
 .focus\:border-blue-600:focus {
@@ -1080,28 +1084,6 @@ video {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
-.group\/as:checked .group-checked\/as\:hidden {
-  display: none;
-}
-
-.group:checked .group-checked\:hidden {
-  display: none;
-}
-
-.group\/asud:checked .group-checked\/asud\:hidden {
-  display: none;
-}
-
-.group:checked .group-checked\:text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.group\/b-like-a:checked .group-checked\/b-like-a\:text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .group\/b-like:hover .group-hover\/b-like\:p-4 {
   padding: 1rem;
 }
@@ -1118,6 +1100,26 @@ video {
   padding: 1.75rem;
 }
 
+.group\/b-like:active .group-active\/b-like\:bg-slate-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
+.group\/b-more:active .group-active\/b-more\:bg-slate-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
+.group\/b-user:active .group-active\/b-user\:bg-slate-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
+.group:active .group-active\:bg-slate-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
 .peer:checked ~ .peer-checked\:block {
   display: block;
 }
@@ -1126,14 +1128,9 @@ video {
   display: none;
 }
 
-.peer:checked ~ .peer-checked\:text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.peer:checked ~ .peer-checked\:text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
+.peer:checked ~ .peer-checked\:text-pink-600 {
+  --tw-text-opacity: 1;
+  color: rgb(219 39 119 / var(--tw-text-opacity));
 }
 
 .peer:-moz-placeholder-shown ~ .peer-placeholder-shown\:top-1\/2 {
