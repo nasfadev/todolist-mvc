@@ -95,16 +95,15 @@
                 <div class="hover:text-pink-600 flex group/b-like items-center space-x-3">
                     <div class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2 text-lg">
                         <div class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300"></div>
-                        <input type="checkbox" class="opacity-0 peer z-10">
+                        <input type="checkbox" class="opacity-100 w-96 h-96 peer z-10">
                         <div class="peer-checked:hidden">
                             <i class="fa-regular fa-heart"></i>
-                            <span class="text-sm z-10">13k</span>
                         </div>
                         <div class="hidden peer-checked:block peer-checked:text-pink-600">
                             <i class="fa-solid fa-heart"></i>
-                            <span class="text-sm z-10">13k</span>
                         </div>
                     </div>
+                    <span class="text-sm z-10">13k</span>
                 </div>
 
             </div>
