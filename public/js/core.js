@@ -1,9 +1,13 @@
-let scrollData = 0;
-let isSearchPageMode = false;
+let scrollData = 0,
+  isSearchPageMode = false,
+  menuBottomTemp,
+  menuBigTemp;
 $(document).ready(function () {
   init();
 });
 function init() {
+  menuBottomTemp = $("#menu-bottom").find("#explore-btn");
+  menuBigTemp = $("#menu").find("#explore-btn");
   initEvent();
 }
 function initEvent() {
@@ -31,9 +35,17 @@ function eventHandler(e) {
     disableSearchPage();
     $(document).scrollTop(scrollData);
     isSearchPageMode = false;
-  }
-  if (target === "like-btn") {
+  } else if (target === "like-btn") {
     likeBtn(e.target);
+  } else if (target === "explore-btn" || target === "user-btn") {
+    const menuBottomBtn = $("#menu-bottom").find("#" + target);
+    const menuBigBtn = $("#menu").find("#" + target);
+    disableMenuBottom(menuBottomTemp);
+    disableMenuBottom(menuBigTemp);
+    enableMenuBottom(menuBottomBtn);
+    enableMenuBottom(menuBigBtn);
+    menuBottomTemp = menuBottomBtn;
+    menuBigTemp = menuBigBtn;
   }
 }
 function responsive() {
@@ -44,11 +56,22 @@ function responsive() {
 }
 function likeBtn(target) {
   const btn = $(target).find("i")[0];
-  console.log(btn);
   $(target).toggleClass("text-pink-600");
   $(btn).toggleClass("fa-regular");
   $(btn).toggleClass("fa-solid");
-  // $(btn).toggle("hidden");
+}
+function enableMenuBottom(target) {
+  if (!target) return;
+
+  const btn = $(target).find("i")[0];
+  $(btn).removeClass("fa-regular");
+  $(btn).addClass("fa-solid");
+}
+function disableMenuBottom(target) {
+  if (!target) return;
+  const btn = $(target).find("i")[0];
+  $(btn).addClass("fa-regular");
+  $(btn).removeClass("fa-solid");
 }
 function enableSearchPage() {
   $("#search-btn").parent().addClass("hidden");
