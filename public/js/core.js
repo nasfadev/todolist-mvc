@@ -32,12 +32,23 @@ function eventHandler(e) {
     $(document).scrollTop(scrollData);
     isSearchPageMode = false;
   }
+  if (target === "like-btn") {
+    likeBtn(e.target);
+  }
 }
 function responsive() {
   if ($(window).width() > 640 && isSearchPageMode) {
     disableSearchPage();
     isSearchPageMode = false;
   }
+}
+function likeBtn(target) {
+  const btn = $(target).find("i")[0];
+  console.log(btn);
+  $(target).toggleClass("text-pink-600");
+  $(btn).toggleClass("fa-regular");
+  $(btn).toggleClass("fa-solid");
+  // $(btn).toggle("hidden");
 }
 function enableSearchPage() {
   $("#search-btn").parent().addClass("hidden");

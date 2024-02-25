@@ -157,7 +157,7 @@
                 </div>
             </div>
             <img src="img/thum.jpg" width="200" height="200" alt="" class=" rounded-lg w-full h-auto">
-            <div class="mb-0 flex justify-around items-center text-slate-600">
+            <div class="mb-0 flex justify-around items-center text-slate-600 h-7 *:h-full *:w-14 *:justify-center">
                 <div class="hover:text-blue-700 flex group/b-like items-center space-x-3">
                     <div class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                         <div
@@ -167,21 +167,17 @@
                     </div>
                     <span class="text-sm z-10">1k</span>
                 </div>
-                <div class="hover:text-pink-600 cursor-pointer flex group/b-like items-center space-x-3">
+                <div id="like-btn"
+                    class="select-none hover:text-pink-600 cursor-pointer flex group/b-like items-center space-x-3">
                     <div
-                        class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2 text-lg">
+                        class="relative pointer-events-none *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2 text-lg">
                         <div
                             class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
                         </div>
-                        <input type="checkbox" class="opacity-0 cursor-pointer size-6 peer z-10">
-                        <div class="peer-checked:hidden">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="hidden peer-checked:block peer-checked:text-pink-600">
-                            <i class="fa-solid fa-heart"></i>
-                        </div>
+                        <i class=" fa-regular fa-heart"></i>
                     </div>
-                    <span class="text-sm z-10">13k</span>
+
+                    <span class="text-sm z-10 pointer-events-none">13k</span>
                 </div>
 
             </div>

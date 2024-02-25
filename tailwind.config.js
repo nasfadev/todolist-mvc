@@ -4,6 +4,7 @@ module.exports = {
     "./app/views/home.php",
     "./app/views/login.php",
     "./public/home.html",
+    "./public/js/core.js",
   ],
   theme: {
     extend: {},
