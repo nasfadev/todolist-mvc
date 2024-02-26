@@ -548,6 +548,10 @@ video {
   pointer-events: none;
 }
 
+.pointer-events-auto {
+  pointer-events: auto;
+}
+
 .visible {
   visibility: visible;
 }
@@ -622,6 +626,10 @@ video {
 
 .z-40 {
   z-index: 40;
+}
+
+.float-right {
+  float: right;
 }
 
 .mb-0 {
@@ -1055,6 +1063,11 @@ video {
   line-height: 1.5rem;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1390,6 +1403,10 @@ video {
 
 .group:hover .group-hover\:p-7 {
   padding: 1.75rem;
+}
+
+.group:hover .group-hover\:p-10 {
+  padding: 2.5rem;
 }
 
 .group\/b-like:active .group-active\/b-like\:bg-slate-300 {

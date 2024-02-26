@@ -19,8 +19,13 @@
         <nav class="relative h-16 ">
             <div id="search"
                 class="hidden text-lg w-full px-5 items-center space-x-6 absolute z-30 top-1/2 -translate-x-1/2  -translate-y-1/2 left-1/2">
-                <div id="search-cls-btn" class="cursor-pointer">
-                    <i class="fa-solid fa-arrow-left pointer-events-none"></i>
+                <div id="search-cls-btn" class="cursor-pointer group hover:text-blue-700">
+                    <div class="pointer-events-none relative h-full w-full ">
+                        <div
+                            class=" bg-slate-100 duration-200 rounded-full p-0 group-hover:p-5 group-active:bg-slate-200 absolute  top-1/2 -translate-x-1/2  -translate-y-1/2 left-1/2">
+                        </div>
+                        <i class="fa-solid fa-arrow-left relative"></i>
+                    </div>
                 </div>
                 <div class="relative w-full">
 
@@ -63,7 +68,7 @@
                             <i class="fa-regular fa-user"></i>
                         </div>
                     </div>
-                    <div class="sm:hidden group cursor-pointer">
+                    <div class="sm:hidden group cursor-pointer hover:text-blue-700">
                         <div
                             class="relative h-full w-full *:absolute *:top-1/2  *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                             <div
@@ -111,28 +116,38 @@
     </div>
     <div id="search-result" class="hidden mt-16 *:px-4 *:py-2 *:duration-200 *:cursor-pointer">
         <div class="first:*:pr-2 hover:bg-slate-100 active:bg-slate-200">
-            <span class="text-lg">
+            <span class="text-xl">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </span>
-            <span class="text-slate-600">Make money from</span>
+            <span class="">Make money from</span>
         </div>
         <div class="first:*:pr-2 hover:bg-slate-100 active:bg-slate-200">
-            <span class="text-lg">
+            <span class="text-xl">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </span>
-            <span class="text-slate-600">Make money from</span>
+            <span class="">Make money from</span>
         </div>
         <div class="first:*:pr-2 hover:bg-slate-100 active:bg-slate-200">
-            <span class="text-lg">
+            <span class="text-xl">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </span>
-            <span class="text-slate-600">Make money from</span>
+            <span class="">Make money from</span>
         </div>
         <div class="first:*:pr-2 hover:bg-slate-100 active:bg-slate-200">
-            <span class="text-lg">
+            <span class="text-xl">
                 <i class="fa-solid fa-clock-rotate-left"></i>
             </span>
-            <span class="text-slate-600">Make money from</span>
+            <span class="">Make money from</span>
+            <span class="text-xl float-right text-slate-400 hover:text-blue-700 group pointer-events-auto">
+                <div class="pointer-events-none relative h-full w-full ">
+                    <div
+                        class=" bg-slate-200 duration-200 rounded-full p-0 group-hover:p-4 group-active:bg-slate-300 absolute  top-1/2 -translate-x-1/2  -translate-y-1/2 left-1/2">
+                    </div>
+                    <span class="relative">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+                </div>
+            </span>
         </div>
     </div>
     <main id="main-content"
