@@ -1,14 +1,26 @@
-let scrollData = 0,
-  isSearchPageMode = false,
+let scrollData,
+  isSearchPageMode,
   menuBottomTemp,
-  menuBigTemp;
+  menuBigTemp,
+  scrollTopTemp,
+  scrollTopDelta,
+  menuScroll,
+  menuBottomScroll;
+const menuHeight = 64;
+const menuBottomHeight = 40;
 $(document).ready(function () {
   init();
 });
 function init() {
+  initVar();
+  initEvent();
+}
+function initVar() {
   menuBottomTemp = $("#menu-bottom").find("#explore-btn");
   menuBigTemp = $("#menu").find("#explore-btn");
-  initEvent();
+  scrollTopTemp = 0;
+  menuScroll = 0;
+  menuBottomScroll = 0;
 }
 function initEvent() {
   $(window).click(function (e) {
@@ -18,11 +30,36 @@ function initEvent() {
   $(window).resize(function () {
     responsive();
   });
-  $(window).scroll(function () {
-    console.log($(document).scrollTop());
-    if (isSearchPageMode) return;
-    scrollData = $(document).scrollTop();
+  $(window).scroll(function (e) {
+    initScrollTopDelta();
+    searchPageModeScroll();
+    navInteractiveScroll();
   });
+}
+function initScrollTopDelta() {
+  let scrollTop = $(document).scrollTop();
+  scrollTopDelta = scrollTopTemp - scrollTop;
+  scrollTopTemp = scrollTop;
+}
+function clamp(min, max, value) {
+  if (value >= min && value <= max) return value;
+  if (value < min) return min;
+  return max;
+}
+function navInteractiveScroll() {
+  menuScroll = clamp(-menuHeight, 0, menuScroll + scrollTopDelta);
+  menuBottomScroll = clamp(
+    -menuBottomHeight,
+    0,
+    menuBottomScroll + scrollTopDelta
+  );
+  $("#nav").css("top", menuScroll + "px");
+  $("#menu-bottom").css("bottom", menuBottomScroll + "px");
+}
+
+function searchPageModeScroll() {
+  if (isSearchPageMode) return;
+  scrollData = $(document).scrollTop();
 }
 function eventHandler(e) {
   console.log(e);
