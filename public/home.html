@@ -50,7 +50,7 @@
                     <div id="explore-btn" class="hidden sm:block group cursor-pointer hover:text-blue-700">
                         <div class="pointer-events-none relative h-full w-full ">
                             <div
-                                class=" bg-slate-100 -z-10 duration-200 rounded-full p-0 group-hover:p-4 group-active:bg-slate-300 absolute  top-1/2 -translate-x-1/2  -translate-y-1/2 left-1/2">
+                                class=" bg-slate-100 -z-10 duration-200 rounded-full p-0 group-hover:p-4 group-active:bg-slate-200 absolute  top-1/2 -translate-x-1/2  -translate-y-1/2 left-1/2">
                             </div>
                             <i class=" fa-solid fa-compass "></i>
                         </div>
@@ -58,7 +58,7 @@
                     <div id="user-btn" class="hidden sm:block group cursor-pointer hover:text-blue-700">
                         <div class="pointer-events-none relative h-full w-full ">
                             <div
-                                class=" bg-slate-100 -z-10 duration-200 rounded-full p-0 group-hover:p-4 group-active:bg-slate-300 absolute  top-1/2 -translate-x-1/2  -translate-y-1/2 left-1/2">
+                                class=" bg-slate-100 -z-10 duration-200 rounded-full p-0 group-hover:p-4 group-active:bg-slate-200 absolute  top-1/2 -translate-x-1/2  -translate-y-1/2 left-1/2">
                             </div>
                             <i class="fa-regular fa-user"></i>
                         </div>
@@ -67,7 +67,7 @@
                         <div
                             class="relative h-full w-full *:absolute *:top-1/2  *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                             <div
-                                class="-z-10 bg-slate-100 duration-200 rounded-full p-0 group-hover:p-5 group-active:bg-slate-300">
+                                class="-z-10 bg-slate-100 duration-200 rounded-full p-0 group-hover:p-5 group-active:bg-slate-200">
                             </div>
                             <i id="search-btn" class="fa-solid fa-magnifying-glass"></i>
                         </div>
@@ -84,7 +84,7 @@
             <div
                 class=" pointer-events-none relative h-full w-full *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                 <div
-                    class=" bg-slate-100 duration-200 rounded-full p-0 group-hover/b-user:p-10 group-active/b-user:bg-slate-300">
+                    class=" bg-slate-100 duration-200 rounded-full p-0 group-hover/b-user:p-10 group-active/b-user:bg-slate-200">
                 </div>
                 <i class="fa-solid fa-compass"></i>
             </div>
@@ -93,38 +93,44 @@
             <div
                 class="pointer-events-none relative h-full w-full *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                 <div
-                    class=" bg-slate-100 duration-200 rounded-full p-0 group-hover/b-user:p-10 group-active/b-user:bg-slate-300">
+                    class=" bg-slate-100 duration-200 rounded-full p-0 group-hover/b-user:p-10 group-active/b-user:bg-slate-200">
                 </div>
                 <i class="fa-regular fa-user"></i>
             </div>
         </div>
     </div>
     <div id="more-menu" class="hidden fixed z-50 bg-black/50 bottom-0 size-full">
-        <div class="bg-white rounded-t-3xl pt-10 *:px-6 *:py-2 text-xl absolute w-full">
-            <div class="hover:bg-slate-100 duration-200 first:*:pr-2">
+        <div class="*:cursor-pointer bg-white rounded-t-3xl pt-10 *:px-6 *:py-2 text-xl absolute w-full">
+            <div class="hover:bg-slate-100 duration-200 active:bg-slate-200 first:*:pr-2">
                 <span><i class="fa-solid fa-font-awesome"></i></span> <span class="text-lg">Report</span>
             </div>
-            <div class="hover:bg-slate-100 duration-200 first:*:pr-2">
+            <div class="hover:bg-slate-100 duration-200 active:bg-slate-200 first:*:pr-2">
                 <span><i class="fa-solid fa-ban"></i></span> <span class="text-lg">Block</span>
             </div>
         </div>
     </div>
-    <div id="search-result" class="hidden mt-16 *:px-4 *:py-2 *:duration-200">
-        <div class="first:*:pr-2 hover:bg-slate-100">
+    <div id="search-result" class="hidden mt-16 *:px-4 *:py-2 *:duration-200 *:cursor-pointer">
+        <div class="first:*:pr-2 hover:bg-slate-100 active:bg-slate-200">
             <span class="text-lg">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </span>
             <span class="text-slate-600">Make money from</span>
         </div>
-        <div class="first:*:pr-2 hover:bg-slate-100">
+        <div class="first:*:pr-2 hover:bg-slate-100 active:bg-slate-200">
             <span class="text-lg">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </span>
             <span class="text-slate-600">Make money from</span>
         </div>
-        <div class="first:*:pr-2 hover:bg-slate-100">
+        <div class="first:*:pr-2 hover:bg-slate-100 active:bg-slate-200">
             <span class="text-lg">
                 <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <span class="text-slate-600">Make money from</span>
+        </div>
+        <div class="first:*:pr-2 hover:bg-slate-100 active:bg-slate-200">
+            <span class="text-lg">
+                <i class="fa-solid fa-clock-rotate-left"></i>
             </span>
             <span class="text-slate-600">Make money from</span>
         </div>
@@ -163,7 +169,7 @@
                     <div
                         class="relative text-lg *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-100 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
                         </div>
                         <i class="fa-regular fa-comment-dots"></i>
                     </div>
@@ -195,7 +201,7 @@
                             <div
                                 class="relative h-full w-full *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                                 <div
-                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-300">
+                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-200">
                                 </div>
                                 <i class="fa-solid fa-ellipsis"></i>
                             </div>
@@ -215,7 +221,7 @@
                 <div class="hover:text-blue-700 flex group/b-like items-center space-x-3">
                     <div class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <i class="fa-regular fa-comment-dots"></i>
                     </div>
@@ -225,7 +231,7 @@
                     <div
                         class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2 text-lg">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <input type="checkbox" class="opacity-0 cursor-pointer size-6 peer z-10">
                         <div class="peer-checked:hidden">
@@ -251,7 +257,7 @@
                             <div
                                 class="relative h-full w-full *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                                 <div
-                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-300">
+                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-200">
                                 </div>
                                 <i class="fa-solid fa-ellipsis"></i>
                             </div>
@@ -271,7 +277,7 @@
                 <div class="hover:text-blue-700 flex group/b-like items-center space-x-3">
                     <div class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <i class="fa-regular fa-comment-dots"></i>
                     </div>
@@ -281,7 +287,7 @@
                     <div
                         class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2 text-lg">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <input type="checkbox" class="opacity-0 cursor-pointer size-6 peer z-10">
                         <div class="peer-checked:hidden">
@@ -307,7 +313,7 @@
                             <div
                                 class="relative h-full w-full *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                                 <div
-                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-300">
+                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-200">
                                 </div>
                                 <i class="fa-solid fa-ellipsis"></i>
                             </div>
@@ -327,7 +333,7 @@
                 <div class="hover:text-blue-700 flex group/b-like items-center space-x-3">
                     <div class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <i class="fa-regular fa-comment-dots"></i>
                     </div>
@@ -337,7 +343,7 @@
                     <div
                         class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2 text-lg">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <input type="checkbox" class="opacity-0 cursor-pointer size-6 peer z-10">
                         <div class="peer-checked:hidden">
@@ -363,7 +369,7 @@
                             <div
                                 class="relative h-full w-full *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                                 <div
-                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-300">
+                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-200">
                                 </div>
                                 <i class="fa-solid fa-ellipsis"></i>
                             </div>
@@ -383,7 +389,7 @@
                 <div class="hover:text-blue-700 flex group/b-like items-center space-x-3">
                     <div class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <i class="fa-regular fa-comment-dots"></i>
                     </div>
@@ -393,7 +399,7 @@
                     <div
                         class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2 text-lg">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <input type="checkbox" class="opacity-0 cursor-pointer size-6 peer z-10">
                         <div class="peer-checked:hidden">
@@ -419,7 +425,7 @@
                             <div
                                 class="relative h-full w-full *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                                 <div
-                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-300">
+                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-200">
                                 </div>
                                 <i class="fa-solid fa-ellipsis"></i>
                             </div>
@@ -439,7 +445,7 @@
                 <div class="hover:text-blue-700 flex group/b-like items-center space-x-3">
                     <div class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <i class="fa-regular fa-comment-dots"></i>
                     </div>
@@ -449,7 +455,7 @@
                     <div
                         class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2 text-lg">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <input type="checkbox" class="opacity-0 cursor-pointer size-6 peer z-10">
                         <div class="peer-checked:hidden">
@@ -475,7 +481,7 @@
                             <div
                                 class="relative h-full w-full *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                                 <div
-                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-300">
+                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-200">
                                 </div>
                                 <i class="fa-solid fa-ellipsis"></i>
                             </div>
@@ -495,7 +501,7 @@
                 <div class="hover:text-blue-700 flex group/b-like items-center space-x-3">
                     <div class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <i class="fa-regular fa-comment-dots"></i>
                     </div>
@@ -505,7 +511,7 @@
                     <div
                         class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2 text-lg">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <input type="checkbox" class="opacity-0 cursor-pointer size-6 peer z-10">
                         <div class="peer-checked:hidden">
@@ -531,7 +537,7 @@
                             <div
                                 class="relative h-full w-full *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                                 <div
-                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-300">
+                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-200">
                                 </div>
                                 <i class="fa-solid fa-ellipsis"></i>
                             </div>
@@ -551,7 +557,7 @@
                 <div class="hover:text-blue-700 flex group/b-like items-center space-x-3">
                     <div class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <i class="fa-regular fa-comment-dots"></i>
                     </div>
@@ -561,7 +567,7 @@
                     <div
                         class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2 text-lg">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <input type="checkbox" class="opacity-0 cursor-pointer size-6 peer z-10">
                         <div class="peer-checked:hidden">
@@ -587,7 +593,7 @@
                             <div
                                 class="relative h-full w-full *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                                 <div
-                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-300">
+                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-200">
                                 </div>
                                 <i class="fa-solid fa-ellipsis"></i>
                             </div>
@@ -607,7 +613,7 @@
                 <div class="hover:text-blue-700 flex group/b-like items-center space-x-3">
                     <div class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <i class="fa-regular fa-comment-dots"></i>
                     </div>
@@ -617,7 +623,7 @@
                     <div
                         class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2 text-lg">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <input type="checkbox" class="opacity-0 cursor-pointer size-6 peer z-10">
                         <div class="peer-checked:hidden">
@@ -643,7 +649,7 @@
                             <div
                                 class="relative h-full w-full *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                                 <div
-                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-300">
+                                    class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-200">
                                 </div>
                                 <i class="fa-solid fa-ellipsis"></i>
                             </div>
@@ -663,7 +669,7 @@
                 <div class="hover:text-blue-700 flex group/b-like items-center space-x-3">
                     <div class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <i class="fa-regular fa-comment-dots"></i>
                     </div>
@@ -673,7 +679,7 @@
                     <div
                         class="relative *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2 text-lg">
                         <div
-                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-300">
+                            class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-like:p-4 group-active/b-like:bg-slate-200">
                         </div>
                         <input type="checkbox" class="opacity-0 cursor-pointer size-6 peer z-10">
                         <div class="peer-checked:hidden">
