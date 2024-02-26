@@ -83,6 +83,10 @@ function eventHandler(e) {
     enableMenuBottom(menuBigBtn);
     menuBottomTemp = menuBottomBtn;
     menuBigTemp = menuBigBtn;
+  } else if (target === "card-more-btn") {
+    enableCardMoreMenu();
+  } else if (target === "more-menu") {
+    enableCardMoreMenu();
   }
 }
 function responsive() {
@@ -91,6 +95,42 @@ function responsive() {
     isSearchPageMode = false;
   }
 }
+function enableCardMoreMenu(target) {
+  const $moreMenu = $("#more-menu");
+  const $moreMenuList = $("#more-menu").children().first();
+  if ($moreMenu.hasClass("hidden")) {
+    $moreMenu.css("opacity", 0);
+    $moreMenuList.css("bottom", "-30px");
+    $moreMenu.toggleClass("hidden");
+    $moreMenu.animate(
+      {
+        opacity: 1,
+      },
+      150
+    );
+    $moreMenuList.animate(
+      {
+        bottom: "0px",
+      },
+      150
+    );
+  } else {
+    $moreMenu.animate(
+      {
+        opacity: 0,
+      },
+      150,
+      () => $moreMenu.toggleClass("hidden")
+    );
+    $moreMenuList.animate(
+      {
+        bottom: "-30px",
+      },
+      150
+    );
+  }
+}
+
 function likeBtn(target) {
   const btn = $(target).find("i")[0];
   $(target).toggleClass("text-pink-600");

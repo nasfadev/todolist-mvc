@@ -79,7 +79,7 @@
         </nav>
     </header>
     <div id="menu-bottom"
-        class="sm:hidden *:cursor-pointer z-50 h-10 border-t overflow-hidden bg-white bottom-0 fixed w-full text-lg text-center *:flex-grow *:basis-0 *:min-w-0 text-slate-500 flex *:py-2">
+        class="sm:hidden *:cursor-pointer z-40 h-10 border-t overflow-hidden bg-white bottom-0 fixed w-full text-lg text-center *:flex-grow *:basis-0 *:min-w-0 text-slate-500 flex *:py-2">
         <div id="explore-btn" class="group/b-user hover:text-blue-700">
             <div
                 class=" pointer-events-none relative h-full w-full *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
@@ -99,12 +99,15 @@
             </div>
         </div>
     </div>
-    <div class="absolute hidden bg-white bottom-0 
-    ">
-        <ul>
-            <li>Report</li>
-            <li>Block</li>
-        </ul>
+    <div id="more-menu" class="hidden fixed z-50 bg-black/50 bottom-0 size-full">
+        <div class="bg-white rounded-t-3xl pt-10 *:px-6 *:py-2 text-xl absolute w-full">
+            <div class="hover:bg-slate-100 duration-200 first:*:pr-2">
+                <span><i class="fa-solid fa-font-awesome"></i></span> <span class="text-lg">Report</span>
+            </div>
+            <div class="hover:bg-slate-100 duration-200 first:*:pr-2">
+                <span><i class="fa-solid fa-ban"></i></span> <span class="text-lg">Block</span>
+            </div>
+        </div>
     </div>
     <div id="search-result" class="hidden mt-16 *:px-4 *:py-2 *:duration-200">
         <div class="first:*:pr-2 hover:bg-slate-100">
@@ -135,9 +138,9 @@
                 <div class="flex flex-col grow">
                     <div class="flex *:px-2">
                         <h3 class="font-medium grow">Progress of making roblox game..</h3>
-                        <div class="sm:group-hover:block group/b-more sm:hidden hover:text-blue-700">
+                        <div id="card-more-btn" class="sm:group-hover:block group/b-more sm:hidden hover:text-blue-700">
                             <div
-                                class="relative h-full w-full *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
+                                class="relative pointer-events-none h-full w-full *:absolute *:top-1/2 z-0 *:-translate-x-1/2  *:-translate-y-1/2 *:left-1/2">
                                 <div
                                     class=" bg-slate-200 duration-200 rounded-full p-0 group-hover/b-more:p-4 group-active/b-more:bg-slate-300">
                                 </div>
