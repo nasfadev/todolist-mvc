@@ -47,6 +47,7 @@ function clamp(min, max, value) {
   return max;
 }
 function navInteractiveScroll() {
+  if (isSearchPageMode) return;
   menuScroll = clamp(-menuHeight, 0, menuScroll + scrollTopDelta);
   menuBottomScroll = clamp(
     -menuBottomHeight,
