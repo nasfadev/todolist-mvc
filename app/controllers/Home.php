@@ -2,12 +2,14 @@
 
 namespace todolist;
 
+
 class Home extends Controllers
 {
     public function init()
     {
+        $data = $this->model('TodolistProject')->getLatests(10);
         $this->view('templates/header', $_POST);
-        $this->view('home', $_POST);
+        $this->view('home', $data);
         $this->view('templates/footer', $_POST);
     }
 }

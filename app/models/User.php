@@ -5,7 +5,7 @@ namespace todolist;
 class User
 {
     private $db;
-    private $table = 'users';
+    private $table = 'user';
     public function __construct()
     {
         $this->db = new Database;
@@ -22,6 +22,16 @@ class User
         $this->db->bind('pass', $data['password']);
         $result = $this->db->getOne();
         $_SESSION['user_data'] = $result;
+        return $result;
+    }
+    public function getOne(int $id)
+    {
+        $query = "SELECT * FROM " .
+            $this->table .
+            " WHERE id=:id";
+        $this->db->query($query);
+        $this->db->bind('id', $id);
+        $result = $this->db->getOne();
         return $result;
     }
 }
