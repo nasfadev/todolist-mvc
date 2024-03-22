@@ -5,23 +5,73 @@ namespace todolist;
 
 class Router
 {
-    private $controller = 'Login';
-    private $model = 'login';
-    function __construct(array $url)
+    private $controller = 'discover';
+    private $method = 'latests';
+    private $params = [];
+    private $defaultURL = "/discover/latests";
+    function __construct()
     {
-
-        $login = $this->get_contr('Login');
-        $login->tryLogin();
-        if (!isset($_SESSION['user_data']['user'])) {
-            $login->init();
-            return;
+        $url = $this->URLParser();
+        $base = isset($_SERVER["HTTPS"]) ? "https://" : "http://" . $_SERVER['HTTP_HOST'];
+        $controller = ucfirst($url[0]);
+        $this->auth($base, $url);
+        if (file_exists('../app/controllers/' . $controller . '.php')) {
+            $this->controller = $this->getController($controller);
+            unset($url[0]);
+        } else {
+            header("Location:" . $base . $this->defaultURL);
         }
-        $home = $this->get_contr('Home');
-        $home->init();
+        // method
+        if (isset($url[1])) {
+            if (method_exists($this->controller, $url[1])) {
+                $this->method = $url[1];
+                unset($url[1]);
+            } else {
+                header("Location:" . $base . "/" . $controller);
+            }
+        }
+
+        // params
+        if (!empty($url)) {
+            $this->params = array_values($url);
+        }
+
+        // jalankan controller & method, serta kirimkan params jika ada
+        call_user_func_array([$this->controller, $this->method], $this->params);
     }
-    function get_contr(string $controller)
+    function getController(string $controller)
     {
-        require('../app/controllers/' . $controller . '.php');
+        require_once('../app/controllers/' . $controller . '.php');
         return new (__NAMESPACE__ . '\\' . $controller);
+    }
+    public function URLParser()
+    {
+        if (isset($_GET['url'])) {
+            $url = rtrim($_GET['url'], '/');
+            $url = filter_var($url, FILTER_SANITIZE_URL);
+            $url = explode('/', $url);
+            return $url;
+        }
+    }
+    public function auth($base, $url)
+    {
+        // check if there is a login form submitted
+        if (!isset($_SESSION['user_id'])) {
+            $this->getController('Login')->login();
+        }
+        // if the user want to access a controller but never logged
+        if (!isset($_SESSION['user_id']) && $url[0] !== "login") {
+            header("Location:" . $base . "/login");
+            exit;
+        }
+        // if the user doesnt provide a controller or method but already logged
+        if (isset($_SESSION['user_id']) && ($url[0] === "login" || !isset($url[0]))) {
+            header("Location:" . $base . $this->defaultURL);
+            exit;
+        }
+        if (!isset($_SESSION['user_id']) && $url[0] === "login" && !isset($url[1])) {
+            $this->getController('Login')->init();
+            exit;
+        }
     }
 }

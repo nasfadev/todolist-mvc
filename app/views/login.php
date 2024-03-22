@@ -1,7 +1,10 @@
+<?php $base = isset($_SERVER["HTTPS"]) ? "https://" : "http://" . $_SERVER['HTTP_HOST']; ?>
+
 <!DOCTYPE html>
 <html lang="en" class="h-full">
 
 <head>
+    <base href="<?php echo $base ?>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -13,7 +16,7 @@
         <h1 class="text-4xl text-center ">
             Login to <span class="font-bold text-blue-500">ToDoList</span>
         </h1>
-        <form method="post" class="bg-white border p-5 w-full md:w-80  shadow-md flex flex-col space-y-5 rounded-md" action="">
+        <form method="post" class="bg-white border p-5 w-full md:w-80  shadow-md flex flex-col space-y-5 rounded-md" action="login">
             <div class="relative w-full">
                 <input placeholder=" " class="duration-100 text-slate-500 focus:outline-none w-full focus:text-slate-500 focus:border-blue-600 focus:ring-0 border peer  h-10 rounded-md  border-slate-300 p-3" name="username" type="text">
                 <label class="peer-placeholder-shown:text-slate-500 peer-placeholder-shown:text-base text-sm p-1 peer-focus:-translate-x-1 -translate-x-1 peer-focus:text-sm peer-focus:text-blue-600 text-slate-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:-translate-y-1/4 peer-focus:top-[-25%] bg-white ease-out duration-300 absolute top-[-25%] left-3 transform -translate-y-1/4 pointer-events-none">Username</label>

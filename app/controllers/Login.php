@@ -8,8 +8,8 @@ class Login extends Controllers
     {
         $this->view('login', $_POST);
     }
-    public function tryLogin()
+    public function login()
     {
-        $this->model('User')->check($_POST);
+        $this->model('User')->login($_POST);
     }
 }

@@ -22,24 +22,40 @@ function initVar() {
   menuBottomScroll = 0;
 }
 function initEvent() {
-  $(window).click(function (e) {
-    e.preventDefault();
+  window.addEventListener("popstate", function (e) {
+    console.log(e);
+  });
+  $(window).on("popstate", function (e) {
     eventHandler(e);
   });
-  $(window).resize(function () {
+  $("a").click(function (e) {
+    e.preventDefault();
+    var d = this.href;
+    window.history.pushState({ data: d }, d, d);
+    console.log(d);
+  });
+
+  $(window).on("popstate", function (e) {
+    var d = e.state || { data: "no state" };
+    console.log("anjay" + d);
+  });
+  $(document).on("click", function (e) {
+    eventHandler(e);
+  });
+  $(document).on("resize", function () {
     responsive();
   });
   addScrollEventListener();
 }
 function addScrollEventListener() {
-  $(window).on("scroll", function (e) {
+  $(document).on("scroll", function (e) {
     initScrollTopDelta();
     searchPageModeScroll();
     navInteractiveScroll();
   });
 }
 function removeScrollEventListener() {
-  $(window).off("scroll");
+  $(document).off("scroll");
 }
 function initScrollTopDelta() {
   let scrollTop = $(document).scrollTop();
@@ -75,6 +91,13 @@ function eventHandler(e) {
   if (!isSearchResult(e.target)) {
     searchResultToogle(target);
   }
+
+  if (!isDropDown(e, "filter", "filter-options")) {
+    dropDownToogle(target, "filter", "filter-options");
+  }
+  // if (!isDropDown(e, "search-lg", "search-lg-result")) {
+  //   dropDownToogle(target, "search-lg", "search-lg-result");
+  // }
   if (target === "search-btn") {
     removeScrollEventListener();
     enableSearchPage();
@@ -99,6 +122,8 @@ function eventHandler(e) {
     enableCardMoreMenu(e);
   } else if (target === "search-lg") {
     searchResultToogle(target);
+  } else if (target === "filter") {
+    dropDownToogle(target, "filter", "filter-options");
   }
 }
 function responsive() {
@@ -122,6 +147,22 @@ function searchResultToogle(target) {
     $("#search-lg-result").addClass("hidden");
   }
 }
+function isDropDown(e, targetMatch, targetDropDown) {
+  if ($(e).parents("#" + targetDropDown).length) {
+    return true;
+  }
+  if ($(e).attr("id") == targetMatch) {
+    return true;
+  }
+  return false;
+}
+function dropDownToogle(target, targetMatch, targetDropDown) {
+  if (target == targetMatch && $("#" + targetDropDown).hasClass("hidden")) {
+    $("#" + targetDropDown).removeClass("hidden");
+  } else if (target != targetMatch) {
+    $("#" + targetDropDown).addClass("hidden");
+  }
+}
 function enableCardMoreMenu(target) {
   if (visualViewport.width > 640) {
     if ($("#floating-menu").children().length > 0) {
@@ -134,7 +175,7 @@ function enableCardMoreMenu(target) {
             <div style ="left : ${
               pos.left + target.target.clientWidth
             }px; top: ${pos.top}px"
-                class="pointer-events-auto *:cursor-pointer drop-shadow-md bg-white -translate-x-full *:px-6 *:py-2 text-xl absolute rounded-2xl overflow-hidden">
+                class="pointer-events-auto *:cursor-pointer drop-shadow-lg bg-white -translate-x-full *:px-6 *:py-2 text-xl absolute rounded-2xl overflow-hidden">
                 <div class="hover:bg-slate-100 duration-200 active:bg-slate-200 flex space-x-2">
                     <span><i class="fa-solid fa-font-awesome"></i></span> <span class="text-lg">Report</span>
                 </div>

@@ -3,9 +3,9 @@
 namespace todolist;
 
 
-class Home extends Controllers
+class Discover extends Controllers
 {
-    public function init()
+    public function latests()
     {
         $data = $this->model('TodolistProject')->getLatests(10);
         $this->view('templates/header', $_POST);
