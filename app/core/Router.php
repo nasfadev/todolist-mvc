@@ -5,13 +5,14 @@ namespace todolist;
 
 class Router
 {
-    private $controller = 'discover';
-    private $method = 'latests';
+    private $controller = 'login';
+    private $method = 'init';
     private $params = [];
-    private $defaultURL = "/discover/latests";
+    private $defaultURL = "/discover";
     function __construct()
     {
         $url = $this->URLParser();
+        $this->restAPIGateway($url);
         $base = isset($_SERVER["HTTPS"]) ? "https://" : "http://" . $_SERVER['HTTP_HOST'];
         $controller = ucfirst($url[0]);
         $this->auth($base, $url);
@@ -27,7 +28,7 @@ class Router
                 $this->method = $url[1];
                 unset($url[1]);
             } else {
-                header("Location:" . $base . "/" . $controller);
+                header("Location:" . $base . "/" . strtolower($controller));
             }
         }
 
@@ -73,5 +74,12 @@ class Router
             $this->getController('Login')->init();
             exit;
         }
+    }
+    public function restAPIGateway($url)
+    {
+        if (!isset($url[0])) return;
+        if ($url[0] !== "v1") return;
+        new RestAPI($url);
+        exit;
     }
 }

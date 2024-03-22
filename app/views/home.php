@@ -7,7 +7,7 @@
                 <div><i class="fa-solid fa-chevron-down"></i></div>
             </div>
             <div id="filter-options" class="hidden overflow-hidden *:duration-200 absolute drop-shadow-lg *:px-4 *:py-1 first:*:pt-2 last:*:pb-2 rounded-lg  z-20 *:block active:*:bg-slate-200 hover:*:bg-slate-100 bg-white w-full left-0 -translate-x-0 top-0 translate-y-12">
-                <a href="\discover\latests">
+                <a href="\discover">
                     Latests
                 </a>
                 <a href="\discover\populars">

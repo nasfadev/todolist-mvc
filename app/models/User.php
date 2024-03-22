@@ -21,7 +21,7 @@ class User
         $this->db->bind('user', $data['username']);
         $this->db->bind('pass', $data['password']);
         $result = $this->db->getOne();
-        $_SESSION['user_id'] = $result;
+        $_SESSION['user_id'] = $result["id"];
         return $result;
     }
     public function getOne(int $id)
